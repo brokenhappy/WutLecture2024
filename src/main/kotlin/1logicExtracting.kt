@@ -13,7 +13,7 @@ private fun printAllPlusOne(numbers: Iterable<Int>) {
 
 private fun printAllPlusTwo(numbers: Iterable<Int>) {
     for (number in numbers) {
-        println(number + 1)
+        println(number + 2)
     }
 }
 
