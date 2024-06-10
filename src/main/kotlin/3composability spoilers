@@ -1,0 +1,36 @@
+private fun processFilteredAndMapped(
+    numbers: Iterable<Int>,
+    filter: (Int) -> Boolean,
+    mapper: (Int) -> Int,
+    processor: (Int) -> Unit,
+) {
+    for (number in numbers) {
+        if (filter(number)) {
+            processor(mapper(number))
+        }
+    }
+}
+
+private fun map(numbers: Iterable<Int>, mapper: (Int) -> Int): List<Int> {
+    val result = mutableListOf<Int>()
+    for (number in numbers) {
+        result.add(mapper(number))
+    }
+    return result
+}
+
+private fun filter(numbers: Iterable<Int>, predicate: (Int) -> Boolean): List<Int> {
+    val result = mutableListOf<Int>()
+    for (number in numbers) {
+        if (predicate(number)) {
+            result.add(number)
+        }
+    }
+    return result
+}
+
+private fun forEach(numbers: Iterable<Int>, action: (Int) -> Unit) {
+    for (number in numbers) {
+        action(number)
+    }
+}
